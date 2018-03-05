@@ -1,4 +1,4 @@
-signalr-client-py
+signalr-client-threads
 =================
 
 Python client proxy for `SignalR <http://signalr.net/>`_.
@@ -11,6 +11,8 @@ Install requirements by running::
 
     pip install -r requirements
 
+
+Fork of SignalR client for Python based on threads instead of gevent.
 
 
 Compatibility

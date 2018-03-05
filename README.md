@@ -1,4 +1,4 @@
-# signalr-client-py
+# signalr-client-threads
 
 Python client proxy for [SignalR](http://signalr.net/).
 
@@ -8,6 +8,8 @@ Install requirements by running
 ```
 pip install -r requirements
 ```
+
+Fork of SignalR client for Python based on threads instead of gevent.
 
 
 ## Compatibility
@@ -74,7 +76,7 @@ with Session() as session:
 
 ## Sample application
 
-There is a [sample application](https://github.com/TargetProcess/signalr-client-py/tree/develop/examples/Chat)
+There is a [sample application](https://github.com/PawelTroka/signalr-client-threads/tree/develop/examples/Chat)
 (ASP.NET vNext chat app) in examples folder. To run it:
 
 1. Install ASP.NET 5 RC.

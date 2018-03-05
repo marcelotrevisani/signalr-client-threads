@@ -1,4 +1,4 @@
-signalr-client-py is written and maintained by
+signalr-client-threads is written and maintained by
 
     Uladzimir Abramchuk @ u-abramchuk
     Andrew Shotkin @ ascho
@@ -8,3 +8,5 @@ and the contributors (ordered by the date of first contribution):
     Michael Herrmann @ mherrmann
     Cyrille B. Delavenne @ cbdelavenne
     Gal Ouz @ galoz
+    Michael Herrmann @ mherrmann
+    Pawel Troka @ PawelTroka
