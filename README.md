@@ -9,9 +9,6 @@ Install requirements by running
 pip install -r requirements
 ```
 
-Signalr client is based on `gevent` which in turn requires Python headers.
-In Debian based distributions (such as Ubuntu and Raspbian) they are called `python-dev`.
-
 
 ## Compatibility
 
