@@ -2,6 +2,8 @@
 
 Python client proxy for [SignalR](http://signalr.net/). Fork of [signalr-client-py](https://github.com/TargetProcess/signalr-client-py) based on threads instead of gevent.
 
+*Note: This is currently not compatible with ASP.NET Core SignalR (.NET Core 2.1), due to some changes in SignalR protocol there*
+
 ### Install using pip
 ```
 pip install signalr-client-threads
