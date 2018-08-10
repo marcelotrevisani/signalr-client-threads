@@ -58,6 +58,8 @@ class Connection:
                     listener()
                 except:
                     self.exception.fire(*sys.exc_info())
+                    self.is_open = False
+                    self.close()
 
         self.is_open = True
         self.__listener_thread = Thread(target=wrapped_listener)
