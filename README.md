@@ -4,12 +4,16 @@ Python client proxy for [SignalR](http://signalr.net/). Fork of [signalr-client-
 
 *Note: This is currently not compatible with ASP.NET Core SignalR (.NET Core 2.1), due to some changes in SignalR protocol there*
 
-### Install using pip
+## Install using pip
 ```
 pip install signalr-client-threads
 ```
+## See it on PyPI
 
-## Requirements
+https://pypi.org/project/signalr-client-threads/
+
+
+### Requirements
 
 Install requirements by running
 ```
@@ -17,12 +21,12 @@ pip install -r requirements
 ```
 
 
-## Compatibility
+### Compatibility
 
 Compatible with Python 2 and 3.
 
 
-## Usage
+### Usage
 
 ```
 from requests import Session
@@ -79,7 +83,7 @@ with Session() as session:
 ```
 
 
-## Sample application
+### Sample application
 
 There is a [sample application](https://github.com/PawelTroka/signalr-client-threads/tree/develop/examples/Chat)
 (ASP.NET vNext chat app) in examples folder. To run it:
@@ -107,7 +111,7 @@ There is a [sample application](https://github.com/PawelTroka/signalr-client-thr
 8. ```dnx web ```
 
 
-## Troubleshooting
+### Troubleshooting
 
 #### dnvm is not available on Mac OS X after installation
 Run ```source dnvm.sh```.
