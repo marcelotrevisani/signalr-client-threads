@@ -9,7 +9,7 @@ with io.open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 
 setup(
     name='signalr-client-threads',
-    version='0.0.9',
+    version='0.0.10',
     description='Fork of SignalR client for Python based on threads instead of gevent',
     long_description=long_description,
     url='https://github.com/PawelTroka/signalr-client-threads',
