@@ -1,2 +1,3 @@
-python setup.py sdist bdist_wheel
-twine upload -u USERNAME -p "PASSWORD" dist/*
+python setup.py sdist
+python setup.py bdist_wheel --universal
+twine upload dist/*
