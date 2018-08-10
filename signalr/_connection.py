@@ -1,4 +1,5 @@
 import json
+import sys
 from threading import Thread
 from signalr.events import EventHook
 from signalr.hubs import Hub
@@ -19,6 +20,7 @@ class Connection:
         self.error = EventHook()
         self.starting = EventHook()
         self.stopping = EventHook()
+        self.exception = EventHook()
         self.is_open = False
         self.__transport = AutoTransport(session, self)
         self.__listener_thread = None
@@ -52,7 +54,10 @@ class Connection:
 
         def wrapped_listener():
             while self.is_open:
-                listener()
+                try:
+                    listener()
+                except:
+                    self.exception.fire(*sys.exc_info())
 
         self.is_open = True
         self.__listener_thread = Thread(target=wrapped_listener)

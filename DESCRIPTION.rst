@@ -1,7 +1,9 @@
 signalr-client-threads
-=================
+======================
 
 Python client proxy for `SignalR <http://signalr.net/>`_.
+
+*Note: This is currently not compatible with ASP.NET Core SignalR (.NET Core 2.1), due to some changes in SignalR protocol there.*
 
 
 Requirements
