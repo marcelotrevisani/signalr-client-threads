@@ -1,6 +1,6 @@
 import json
 import sys
-
+import re
 
 if sys.version_info[0] < 3:
     from urlparse import urlparse, urlunparse
@@ -30,11 +30,20 @@ class WebSocketsTransport(Transport):
 
     def start(self):
         ws_url = self.__get_ws_url_from(self._get_url('connect'))
-
+        
+        proxy_address = None
+        if self._session.proxies and ('https' in self._session.proxies or 'http' in self._session.proxies):
+            proxy_address = self._session.proxies['https'] or session.proxies['http']
+        proxy_data = self.__get_proxy_data(proxy_address)
+            
         self.ws = create_connection(ws_url,
                                     header=self.__get_headers(),
                                     cookie=self.__get_cookie_str(),
-                                    enable_multithread=True)
+                                    enable_multithread=True,
+                                    http_proxy_host = proxy_data['host'], 
+                                    http_proxy_port = proxy_data['port'],
+                                    http_proxy_auth = (proxy_data['user'], proxy_data['pass']) if proxy_data['user'] else None)
+        
         self._session.get(self._get_url('start'))
 
         def _receive():
@@ -71,3 +80,17 @@ class WebSocketsTransport(Transport):
                              '%s=%s' % (name, value)
                              for name, value in self._session.cookies.items()
                              ])
+
+    def __get_proxy_data(self, proxy_url):        
+        result = {'host': None, 'port': None, 'user': None, 'pass': None}
+        
+        if proxy_url:
+            parts = re.search('((\w+):(\w+)?@)?([\d|\w|.|-]+):(\d{2,5})', proxy_url)
+            
+            if parts:
+                result['user'] = parts.group(2)
+                result['pass'] = parts.group(3)
+                result['host'] = parts.group(4)
+                result['port'] = int(parts.group(5))
+            
+        return result
