@@ -31,6 +31,8 @@ setup(
         'Programming Language :: Python :: 3.7',
     ],
     keywords='signalr',
+    package_data={"": ["LICENSE.md", "DESCRIPTION.rst"]},
+    include_package_data=True,
     packages=find_packages(),
     install_requires=['websocket-client', 'sseclient', 'requests']
 )
